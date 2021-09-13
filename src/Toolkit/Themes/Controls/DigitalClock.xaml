@@ -1,0 +1,36 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:atc="using:Aldwych.AvaloniaToolkit.Controls"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Design.PreviewWith>
+    <Border Padding="5" Width="600" Height="400">
+      <atc:DigitalClock FontSize="20"/>
+    </Border>
+  </Design.PreviewWith>
+
+
+  <Style Selector="atc|DigitalClock">
+    <Setter Property="Foreground" Value="Lime"/>
+    <Setter Property="Background" Value="Black"/>
+    <Setter Property="Padding" Value="60"/>
+    <Setter Property="Template">
+      <ControlTemplate>
+
+        <Panel HorizontalAlignment="Center" VerticalAlignment="Center" Background="{TemplateBinding Background}" >
+          <TextBlock Text="{TemplateBinding CurrentTime}"
+                     Margin="{TemplateBinding Padding}"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Center"
+                     TextAlignment="Center"
+                     FontSize="{TemplateBinding FontSize}"
+                     Foreground="{TemplateBinding Foreground}"
+                     FontStyle="Normal"
+                     FontWeight="Regular"
+                     FontFamily="avares://Aldwych.AvaloniaToolkit/Themes/Fonts/digital-7.ttf#Digital-7"/>
+        </Panel>
+
+      </ControlTemplate>
+    </Setter>
+  </Style>
+
+</Styles>

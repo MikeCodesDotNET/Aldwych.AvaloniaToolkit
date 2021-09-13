@@ -1,0 +1,84 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:SampleApp.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:atc="using:Aldwych.AvaloniaToolkit.Controls"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="SampleApp.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="SampleApp">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+
+  <TabControl>
+    <TabItem Header="Pickers">
+      <StackPanel Margin="20" Spacing="20">
+
+        <atc:FilePathTextBox Watermark="File Path" Header="Example File Selector"/>
+
+        <atc:DirectoryPathTextBox  Watermark="Root Directory" Header="Example Director Selector"/>
+
+        <atc:NetworkInterfacesComboBox Header="Network Interface"/>
+
+        <atc:DigitalClock />
+        
+      </StackPanel>      
+    </TabItem>
+
+    <TabItem Header="Circle Panel">
+
+      <atc:CirclePanel Diameter="250">
+        <Border Background="Red" 
+                Width="75" Height="75">
+            <TextBlock Text="1" 
+                       Foreground="White"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+        
+        <Border Background="Green"
+                Width="75" Height="75">
+          <TextBlock Text="2"
+                     Foreground="White"
+                     HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+
+        <Border Background="Blue"
+                Width="75" Height="75">
+          <TextBlock Text="3"
+                     Foreground="White"
+                     HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+
+        <Border Background="Cyan"
+                Width="75" Height="75">
+          <TextBlock Text="4"
+                     Foreground="Black"
+                     HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+
+        <Border Background="Magenta"
+                Width="75" Height="75">
+          <TextBlock Text="5"
+                     Foreground="White"
+                     HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+
+        <Border Background="Yellow"
+                Width="75" Height="75">
+          <TextBlock Text="6"
+                     Foreground="Black"
+                     HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+
+      </atc:CirclePanel>
+      
+    </TabItem>
+    
+    
+  </TabControl>
+  
+</Window>

@@ -1,0 +1,14 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:sys="clr-namespace:System;assembly=netstandard">
+
+    <!-- Icons -->
+    <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/IconsGeometry.xaml" />
+
+    <!-- Controls -->
+    <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Controls/PathTextBox.xaml" />    
+    <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Controls/NetworkInterfacesComboBox.xaml" />    
+    <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Controls/DigitalClock.xaml" />    
+
+
+</Styles>

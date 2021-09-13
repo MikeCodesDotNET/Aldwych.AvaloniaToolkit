@@ -1,0 +1,41 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:atc="using:Aldwych.AvaloniaToolkit.Controls"
+        xmlns:atcc="using:Aldwych.AvaloniaToolkit.Converters"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Design.PreviewWith>
+    <Border Padding="5" Width="600" Height="400">
+      <atc:NetworkInterfacesComboBox />
+    </Border>
+  </Design.PreviewWith>
+
+  <Styles.Resources>
+    <atcc:NetworkInterfaceConverter x:Key="NetworkInterfaceConverter"/>
+  </Styles.Resources>
+
+  <Style Selector="atc|NetworkInterfacesComboBox">
+    <Setter Property="MinWidth" Value="200"/>
+    <Setter Property="Template">
+      <ControlTemplate>
+
+        <Grid HorizontalAlignment="Left" RowDefinitions="Auto, Auto">
+          <TextBlock x:Name="PART_HeaderBlock"
+                     Grid.ColumnSpan="2"
+                     Grid.Row="0"
+                     Text="{TemplateBinding Header}"
+                     Margin="0,0,0,5"/>          
+          
+          <ComboBox Grid.Row="1" Items="{TemplateBinding NetworkInterfaces}" MinWidth="{TemplateBinding MinWidth}">
+            <ComboBox.ItemTemplate>
+              <DataTemplate>
+                <TextBlock Text="{Binding Converter={StaticResource NetworkInterfaceConverter}}"/>
+              </DataTemplate>
+            </ComboBox.ItemTemplate>
+          </ComboBox>
+        </Grid>
+
+      </ControlTemplate>
+    </Setter>
+  </Style>
+
+</Styles>
