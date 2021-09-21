@@ -8,7 +8,7 @@
     <!-- Controls -->
     <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Controls/PathTextBox.xaml" />    
     <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Controls/NetworkInterfacesComboBox.xaml" />    
-    <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Controls/DigitalClock.xaml" />    
-
+    <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Controls/DigitalClock.xaml" />
+    <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Controls/ChatBubble.xaml" />
 
 </Styles>

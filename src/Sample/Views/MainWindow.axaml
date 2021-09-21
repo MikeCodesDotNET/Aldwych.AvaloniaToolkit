@@ -29,6 +29,16 @@
       </StackPanel>      
     </TabItem>
 
+    <TabItem Header="Chat Bubbles">
+      <StackPanel Spacing="20">
+        <atc:ChatBubble Content="Hey!" IsRead="True"/>
+        <atc:ChatBubble  Role="Receiver" IsRead="True">
+          <Image Source="/Assets/avalonia-logo.ico" Width="100" Height="100" />
+        </atc:ChatBubble>
+        <atc:ChatBubble Content="Looks like a really cool technology!" IsRead="False"/>
+      </StackPanel>
+    </TabItem>
+
     <TabItem Header="Circle Panel">
 
       <atc:CirclePanel Diameter="250">
