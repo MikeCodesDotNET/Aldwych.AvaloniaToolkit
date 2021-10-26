@@ -1,3 +1,4 @@
+using Aldwych.AvaloniaToolkit.ViewModels;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
 using SampleApp.ViewModels;

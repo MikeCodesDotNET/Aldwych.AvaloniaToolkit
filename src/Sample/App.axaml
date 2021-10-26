@@ -9,6 +9,7 @@
     <Application.Styles>
         <FluentTheme Mode="Light"/>
         <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/AldwychTheme.xaml" />
+        <StyleInclude Source="avares://Aldwych.Mdi/Themes/MdiWindow.xaml" />
 
     </Application.Styles>
 </Application>

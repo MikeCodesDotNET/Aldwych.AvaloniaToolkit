@@ -1,0 +1,62 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <!-- Add Controls for Previewer Here -->
+          <StackPanel Spacing="10">
+            <Button Content="Hello World"/>
+            <Button Content="Hello World" Classes="Large"/>
+            <Button Content="Hello World" Classes="Medium"/>
+            <Button Content="Hello" Classes="Small"/>
+            <Button Content="5" Classes="Square"/>
+
+          </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+
+  <Styles.Resources>
+    <sys:Double x:Key="ButtonHeight">50</sys:Double>
+    <sys:Double x:Key="ButtonMinHeight">40</sys:Double>
+    <sys:Double x:Key="ButtonMinWidth">20</sys:Double>
+
+  </Styles.Resources>
+
+    <!-- Add Styles Here -->
+    <Style Selector="Button">
+      <Setter Property="Background" Value="{StaticResource LiteMic.Brush.Button.Background}"/>
+      <Setter Property="BorderBrush" Value="{StaticResource LiteMic.Brush.Button.Border}"/>
+      <Setter Property="Foreground" Value="{StaticResource LiteMic.Brush.Button.Foreground}"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="FontSize" Value="{StaticResource CaptionAltFontSize}"/>
+      <Setter Property="HorizontalContentAlignment" Value="Center"/>
+      <Setter Property="VerticalContentAlignment" Value="Center"/>
+      <Setter Property="Padding" Value="10,5"/>
+      <Setter Property="MinHeight" Value="{StaticResource ButtonMinHeight}"/>
+      <Setter Property="MinWidth" Value="{StaticResource ButtonMinWidth}"/>
+
+    </Style>
+
+  <Style Selector="Button.Large">
+    <Setter Property="Height" Value="{StaticResource ButtonHeight}"/>
+    <Setter Property="MinWidth" Value="300"/>
+  </Style>
+
+  <Style Selector="Button.Medium">
+    <Setter Property="Height" Value="{StaticResource ButtonHeight}"/>
+    <Setter Property="Width" Value="150"/>
+  </Style>
+
+  <Style Selector="Button.Small">
+    <Setter Property="Height" Value="{StaticResource ButtonHeight}"/>
+    <Setter Property="Width" Value="75"/>
+  </Style>
+
+  <Style Selector="Button.Square">
+    <Setter Property="Height" Value="{StaticResource ButtonHeight}"/>
+    <Setter Property="Width" Value="{StaticResource ButtonHeight}"/>
+  </Style>
+
+  
+
+</Styles>

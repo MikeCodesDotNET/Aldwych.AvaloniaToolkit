@@ -1,9 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:SampleApp.ViewModels"
+        xmlns:v="using:SampleApp.Views"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:atc="using:Aldwych.AvaloniaToolkit.Controls"
+        xmlns:amdi="clr-namespace:Aldwych.Mdi.Controls;assembly=Aldwych.Mdi"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="750"
         x:Class="SampleApp.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
@@ -15,6 +17,13 @@
 
 
   <TabControl>
+
+    <TabItem Header="MDI">
+      <amdi:Workspace x:Name="touchGrid"
+                        Background="{StaticResource ContentBackground}"
+                        AddNewWindowControlType="{x:Type v:AddWindowView}"/>
+    </TabItem>
+    
     <TabItem Header="Pickers">
       <StackPanel Margin="20" Spacing="20">
 

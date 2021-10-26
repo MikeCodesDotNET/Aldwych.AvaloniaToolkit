@@ -1,0 +1,196 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+	      xmlns:media="clr-namespace:Avalonia.Media;assembly=Avalonia.Visuals">
+
+
+  <Style>
+    <Style.Resources>
+
+      <!--
+			******************************************************************
+				DARK COLOR RESOURCES
+			******************************************************************
+			-->
+
+      <Color x:Key="ThemeBackgroundColor">#202020</Color>
+      <Color x:Key="ThemeSplashColor">#FF0A0A0A</Color>
+
+      <Color x:Key="ThemeBorderLowColor">#040404</Color>
+      <Color x:Key="ThemeBorderMidColor">#353535</Color>
+      <Color x:Key="ThemeBorderHighColor">#FF101010</Color>
+
+      <Color x:Key="ThemeControlLowColor">#2A2A2A</Color>
+      <Color x:Key="ThemeControlMidColor">#353535</Color>
+      <Color x:Key="ThemeControlMidHighColor">#505050</Color>
+
+      <Color x:Key="ThemeControlHighColor">#5A5A5A</Color>
+      <Color x:Key="ThemeControlVeryHighColor">#6D6D6D</Color>
+      <Color x:Key="ThemeControlDarkenColor">#20000000</Color>
+
+      <Color x:Key="ThemeControlHighlightLowColor">#FFA8A8A8</Color>
+      <Color x:Key="ThemeControlHighlightMidColor">#FF828282</Color>
+      <Color x:Key="ThemeControlHighlightHighColor">#FF505050</Color>
+
+      <Color x:Key="ThemeForegroundColor">#FFFFFFFF</Color>
+      <Color x:Key="ThemeForegroundMidColor">#A19F9E</Color>
+      <Color x:Key="ThemeForegroundLowColor">#B5B2B1</Color>
+      <Color x:Key="ThemeIconEnabledColor">#E5E5E5</Color>
+
+
+      <Color x:Key="ThemeButtonDownColor">#2B2B2B</Color>
+      <Color x:Key="ThemeButtonOverColor">#313131</Color>
+      <Color x:Key="ThemeButtonEnabledColor">#353535</Color>
+      <Color x:Key="ThemeButtonDisabledColor">#717171</Color>
+
+      <Color x:Key="ThemeSoftRedColor">#965454</Color>
+
+
+      <!--
+			******************************************************************
+				DARK COLOR BRUSHES
+			******************************************************************
+			-->
+      <SolidColorBrush x:Key="ThemeBackgroundBrush" Color="{DynamicResource ThemeBackgroundColor}"></SolidColorBrush>
+
+      <SolidColorBrush x:Key="ThemeSplashBrush" Color="{DynamicResource ThemeSplashColor}"></SolidColorBrush>
+
+      <SolidColorBrush x:Key="ThemeBorderLowBrush" Color="{DynamicResource ThemeBorderLowColor}"></SolidColorBrush>
+      <SolidColorBrush x:Key="ThemeBorderMidBrush" Color="{DynamicResource ThemeBorderMidColor}"></SolidColorBrush>
+      <SolidColorBrush x:Key="ThemeBorderHighBrush" Color="{DynamicResource ThemeBorderHighColor}"></SolidColorBrush>
+
+      <SolidColorBrush x:Key="ThemeControlLowBrush" Color="{DynamicResource ThemeControlLowColor}"></SolidColorBrush>
+      <SolidColorBrush x:Key="ThemeControlMidBrush" Color="{DynamicResource ThemeControlMidColor}"></SolidColorBrush>
+      <SolidColorBrush x:Key="ThemeControlMidHighBrush" Color="{DynamicResource ThemeControlMidHighColor}"></SolidColorBrush>
+      <SolidColorBrush x:Key="ThemeControlHighBrush" Color="{DynamicResource ThemeControlHighColor}"></SolidColorBrush>
+      <SolidColorBrush x:Key="ThemeControlVeryHighBrush" Color="{DynamicResource ThemeControlVeryHighColor}"></SolidColorBrush>
+      <SolidColorBrush x:Key="ThemeControlDarkenBrush" Color="{DynamicResource ThemeControlDarkenColor}"></SolidColorBrush>
+
+      <SolidColorBrush x:Key="ThemeControlHighlightLowBrush" Color="{DynamicResource ThemeControlHighlightLowColor}"></SolidColorBrush>
+      <SolidColorBrush x:Key="ThemeControlHighlightMidBrush" Color="{DynamicResource ThemeControlHighlightMidColor}"></SolidColorBrush>
+      <SolidColorBrush x:Key="ThemeControlHighlightHighBrush" Color="{DynamicResource ThemeControlHighlightHighColor}"></SolidColorBrush>
+
+      <SolidColorBrush x:Key="ThemeForegroundBrush" Color="{DynamicResource ThemeForegroundColor}"></SolidColorBrush>
+      <SolidColorBrush x:Key="ThemeForegroundMidBrush" Color="{DynamicResource ThemeForegroundMidColor}"></SolidColorBrush>
+      <SolidColorBrush x:Key="ThemeForegroundLowBrush" Color="{DynamicResource ThemeForegroundLowColor}"></SolidColorBrush>
+      <SolidColorBrush x:Key="ThemeIconEnabledBrush" Color="{DynamicResource ThemeIconEnabledColor}"></SolidColorBrush>
+
+      <SolidColorBrush x:Key="ThemeButtonDownBrush" Color="{DynamicResource ThemeButtonDownColor}"></SolidColorBrush>
+      <SolidColorBrush x:Key="ThemeButtonOverBrush" Color="{DynamicResource ThemeButtonOverColor}"></SolidColorBrush>
+      <SolidColorBrush x:Key="ThemeButtonEnabledBrush" Color="{DynamicResource ThemeButtonEnabledColor}"></SolidColorBrush>
+      <SolidColorBrush x:Key="ThemeButtonDisabledBrush" Color="{DynamicResource ThemeButtonDisabledColor}"></SolidColorBrush>
+
+
+      <SolidColorBrush x:Key="ThemeSoftRedBrush" Color="{DynamicResource ThemeSoftRedColor}"></SolidColorBrush>
+
+
+      <!-- Base Colours -->
+      <Color x:Key="LiteMic.FocusBorder">#FFFFFF</Color>
+
+      <!-- Overall foreground color. This color is only used if not overridden by a component. -->
+      <Color x:Key="LiteMic.Foreground">#FFFFFF</Color>
+
+      <!-- Background color of text selections in the workbench (for input fields or text areas, does not apply to selections within the editor and the terminal). -->
+      <Color x:Key="LiteMic.SelectionBackground">#FFFFFF</Color>
+
+      <!-- Foreground color for description text providing additional information, for example for a label. -->
+      <Color x:Key="LiteMic.DescriptionForeground">#797985</Color>
+
+      <Color x:Key="LiteMic.ErrorForeground">#BD413F</Color>
+
+      <Color x:Key="LiteMic.Window.ActiveBorder">#FFFFFF</Color>
+      <Color x:Key="LiteMic.Window.InactiveBorder">#FFFFFF</Color>
+      <Color x:Key="LiteMic.Window.Foreground">#FFFFFF</Color>
+
+      <!-- LiteWindow Colours -->
+      <Color x:Key="LiteMic.Window.SelectedTitleBar">#4D4DC2</Color>
+      <Color x:Key="LiteMic.Window.DefaultTitleBar">#35357D</Color>
+      <Color x:Key="LiteMic.Window.TitleBarText">#FFFFFF</Color>
+      <Color x:Key="LiteMic.Window.ContentBackground">#FF212121</Color>
+
+
+
+
+      <!-- Button -->
+      <Color x:Key="LiteMic.Button.Background">#FF313131</Color>
+      <Color x:Key="LiteMic.Button.Foreground">#FFFFFF</Color>
+      <Color x:Key="LiteMic.Button.Border">#434343</Color>
+
+      <Color x:Key="LiteMic.Button.HoverBackground">#35357D</Color>
+      <Color x:Key="LiteMic.Button.HoverBorder">#35357D</Color>
+      <Color x:Key="LiteMic.Button.HoverForeground">#FFFFFF</Color>
+
+      <Color x:Key="LiteMic.Button.PressedBackground">#35357D</Color>
+      <Color x:Key="LiteMic.Button.PressedBorder">#35357D</Color>
+      <Color x:Key="LiteMic.Button.PressedForeground">#FFFFFF</Color>
+
+      <Color x:Key="LiteMic.Button.DisabledBackground">#35357D</Color>
+      <Color x:Key="LiteMic.Button.DisabledBorder">#35357D</Color>
+      <Color x:Key="LiteMic.Button.DisabledForeground">#FFFFFF</Color>
+
+
+      <!-- CheckBox -->
+      <Color x:Key="LiteMic.Checkbox.Background">#FFFFFF</Color>
+      <Color x:Key="LiteMic.Checkbox.Foreground">#FFFFFF</Color>
+      <Color x:Key="LiteMic.Checkbox.Border">#FFFFFF</Color>
+
+
+      <!-- Input -->
+      <Color x:Key="LiteMic.Input.Background">#FFFFFF</Color>
+      <Color x:Key="LiteMic.Input.Foreground">#FFFFFF</Color>
+      <Color x:Key="LiteMic.Input.Border">#FFFFFF</Color>
+      <Color x:Key="LiteMic.Input.PlaceholderForeground">#FFFFFF</Color>
+
+      <Color x:Key="LiteMic.Input.ActiveBackground">#FFFFFF</Color>
+      <Color x:Key="LiteMic.Input.ActiveBorder">#FFFFFF</Color>
+
+      <Color x:Key="LiteMic.Input.ErrorBackground">#BD413F</Color>
+      <Color x:Key="LiteMic.Input.ErrorForeground">#FFFFFF</Color>
+      <Color x:Key="LiteMic.Input.ErrorBorder">#BD413F</Color>
+
+      <Color x:Key="LiteMic.Input.InfoBackground">#1B79CC</Color>
+      <Color x:Key="LiteMic.Input.InfoForeground">#FFFFFF</Color>
+      <Color x:Key="LiteMic.Input.InfoBorder">#1B79CC</Color>
+
+      <Color x:Key="LiteMic.Input.WarningBackground">#F9A825</Color>
+      <Color x:Key="LiteMic.Input.WarningForeground">#FFFFFF</Color>
+      <Color x:Key="LiteMic.Input.WarningBorder">#F9A825</Color>
+
+
+
+
+      <!-- Grayscale-->
+      <Color x:Key="LiteMic.GrayScale.Black">#000000</Color>
+      <Color x:Key="LiteMic.GrayScale.OffBlack">#FF1C1C1C</Color>
+      <Color x:Key="LiteMic.GrayScale.DarkerGray">#2A2A30</Color>
+      <Color x:Key="LiteMic.GrayScale.DarkGray">#313132</Color>
+      <Color x:Key="LiteMic.GrayScale.Gray">#393940</Color>
+      <Color x:Key="LiteMic.GrayScale.LightGray">#67676E</Color>
+      <Color x:Key="LiteMic.GrayScale.LightGrayWarm">#999999</Color>
+      <Color x:Key="LiteMic.GrayScale.LightGrayCold">#797985</Color>
+      <Color x:Key="LiteMic.GrayScale.LighterGray">#BEBEC0</Color>
+      <Color x:Key="LiteMic.GrayScale.MediumGray">#808080</Color>
+      <Color x:Key="LiteMic.GrayScale.WindowContent">#2E2E2E</Color>
+
+
+      <Color x:Key="LiteMic.DataGrid.RowBackground">#2E2E2E</Color>
+      <Color x:Key="LiteMic.DataGrid.AltRowBackground">#38384B</Color>
+      <Color x:Key="LiteMic.DataGrid.CellBorder">#38384B</Color>
+
+      <Color x:Key="LiteMic.DataGrid.SelectedRow">#4D4DC2</Color>
+
+      <!-- Tabs -->
+      <Color x:Key="LiteMic.Tabs.Header.Default">#2D2D2D</Color>
+      <Color x:Key="LiteMic.Tabs.Header.SelectedBackground">#252526</Color>
+
+
+
+
+
+      <Color x:Key="LiteMic.Purple.EmptyPalette">#38384B</Color>
+      <Color x:Key="LiteMic.Purple.UnSelectablePalette">#58586B</Color>
+
+    </Style.Resources>
+  </Style>
+
+</Styles>

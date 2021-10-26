@@ -1,0 +1,53 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SampleApp.Views.AddWindowView">
+
+	<TabControl>
+		<TabItem Header="Common">
+			<Grid ColumnDefinitions="*,*,*,*" Margin="3,3,3,10">
+				
+				<StackPanel Grid.Column="0" Spacing="5" Margin="3,0,3,0" Orientation="Vertical">
+					<Button Classes="Standard" Content="Fixture"/>
+					<Button Classes="Standard" Content="Sequence"/>
+					<Button Background="DeepSkyBlue" Classes="Standard" Content="Sequence"/>
+
+				</StackPanel>
+
+				<StackPanel Grid.Column="1" Spacing="5" Margin="3,0,3,0" Orientation="Vertical">
+					<Button Classes="Standard" Content="3D"/>
+					<Button Classes="Standard" Content="Layout View"/>
+					<Button Classes="Standard" Content="Selection Grid"/>
+					<Button Classes="Standard" Content="Color Picker"/>
+				</StackPanel>
+
+				<StackPanel Grid.Column="2" Spacing="5" Margin="3,0,3,0" Orientation="Vertical">
+					<Button Classes="Standard" Content="Playback"/>
+					<Button Classes="Standard" Content="XKeys"/>
+				</StackPanel>
+
+				<StackPanel Grid.Column="3" Spacing="5" Margin="3,0,3,0" Orientation="Vertical">
+					<Button Classes="Standard" Content="Command Line" Command="{Binding AddCommandLineHistoryWindow}"/>
+					<Button Classes="Standard" Content="Clock" Command="{Binding AddClockWindow}"/>
+				</StackPanel>
+				
+			</Grid>			
+		</TabItem>
+
+		<TabItem Header="Pools">
+			
+		</TabItem>
+
+		<TabItem Header="Presets">
+
+		</TabItem>
+
+		<TabItem Header="More">
+
+		</TabItem>
+	</TabControl>
+	
+	
+</UserControl>

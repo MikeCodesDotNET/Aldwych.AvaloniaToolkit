@@ -1,0 +1,25 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+				xmlns:media="clr-namespace:Avalonia.Media;assembly=Avalonia.Visuals">
+
+
+	<Style>
+		<Style.Resources>
+
+      <sys:Double x:Key="DefaultControlHeight">40</sys:Double>
+      <Thickness x:Key="DefaultControlPadding">12,6</Thickness>
+
+      <!-- Button -->
+      <sys:Double x:Key="DefaultButtonHeight">50</sys:Double>
+      <sys:Double x:Key="DefaultButtonWidth">130</sys:Double>
+
+      <sys:Double x:Key="MinimumButtonHeight">40</sys:Double>
+      <sys:Double x:Key="MinimumButtonWidth">130</sys:Double>
+      
+      
+
+		</Style.Resources>
+	</Style>
+
+</Styles>

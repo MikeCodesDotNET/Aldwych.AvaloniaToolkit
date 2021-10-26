@@ -1,0 +1,137 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:c="using:Aldwych.Mdi.Controls"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <c:MdiWindow Width="300" Height="400" Title="Testing">
+        <Border Background="Blue"/>
+      </c:MdiWindow>
+    </Border>
+  </Design.PreviewWith>
+
+  <Style Selector="c|MdiWindow">
+    <Setter Property="MinWidth" Value="100"/>
+    <Setter Property="MinHeight" Value="100"/>
+    <Setter Property="BorderBrush" Value="#4D4DC2"/>
+    <Setter Property="ActiveBorderBrush" Value="#2E2E75"/>
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border x:Name="PART_ContentBorder"
+                Background="#212121"
+                BorderThickness="4"
+                ClipToBounds="True"
+                CornerRadius="5"
+                BorderBrush="{TemplateBinding BorderBrush}">
+
+          <Grid RowDefinitions="35, *">
+
+            <Panel Grid.Row="0"
+                   x:Name="PART_TitleBar"
+                   Background="{TemplateBinding BorderBrush}"
+                   Margin="-1, -1, -1, 0">
+
+              <Grid>
+                <DockPanel LastChildFill="True" Margin="8, 0,0,0">
+
+                  <!-- Title -->
+                  <Panel DockPanel.Dock="Left">
+                    <TextBlock x:Name="PART_Title"
+                               Text="{TemplateBinding Title}"
+                               FontSize="14"
+                               FontWeight="SemiBold"
+                               Foreground="White"
+                               VerticalAlignment="Center"/>
+                  </Panel>
+
+                  <StackPanel HorizontalAlignment="Right"
+                              Orientation="Horizontal"
+                              Spacing="0">
+
+                    <!-- Close Button -->
+                    <Button Width="53"
+                            VerticalAlignment="Stretch"
+                            BorderThickness="0"
+                            Margin="0,-4,-8,0"
+                            Name="PART_CloseButton"
+                            ToolTip.Tip="Close">
+
+                      <Button.Resources>
+                        <CornerRadius x:Key="ControlCornerRadius">0</CornerRadius>
+                      </Button.Resources>
+
+                      <Button.Styles>
+                        <Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+                          <Setter Property="Background" Value="#44AAAAAA"/>
+                        </Style>
+                        <Style Selector="Button:not(:pointerover) /template/ ContentPresenter#PART_ContentPresenter">
+                          <Setter Property="Background" Value="Transparent"/>
+                        </Style>
+                        <Style Selector="Button:pointerover > Path">
+                          <Setter Property="Fill" Value="White"/>
+                        </Style>
+                        <Style Selector="Button:not(:pointerover) > Path">
+                          <Setter Property="Fill" Value="{DynamicResource TextFillColorPrimary}"/>
+                        </Style>
+                      </Button.Styles>
+                      <Path Margin="10,0,10,0"
+                            Stretch="Uniform"
+                            Data="M1169 1024l879 -879l-145 -145l-879 879l-879 -879l-145 145l879 879l-879 879l145 145l879 -879l879 879l145 -145z"></Path>
+                    </Button>
+
+                  </StackPanel>
+                </DockPanel>
+              </Grid>
+
+            </Panel>
+            
+            <ContentPresenter x:Name="PART_ContentPresenter"
+                              Grid.Row="1"
+                              Background="{TemplateBinding Background}"
+                              BorderBrush="{TemplateBinding BorderBrush}"
+                              BorderThickness="{TemplateBinding BorderThickness}"
+                              Content="{TemplateBinding Content}"
+                              Padding="{TemplateBinding Padding}"/>
+
+
+            <!-- Resizing Dragger -->
+            <Canvas
+              Grid.Row="1"
+              x:Name="PART_ResizeDragger"
+              Width="55"
+              Height="55"
+              VerticalAlignment="Bottom"
+              HorizontalAlignment="Right"
+              Margin="0,0,-25,-25">
+
+
+              <Canvas.Resources>
+                <LinearGradientBrush x:Key="paint0_linear"  StartPoint="18,15" EndPoint="33,31">
+                  <LinearGradientBrush.GradientStops>
+                    <GradientStops>
+                      <GradientStop Color="#2F2F2F"/>
+                      <GradientStop Color="#736D6D6D" Offset="0.220192"/>
+                      <GradientStop Color="#7D7D7D" Offset="0.328125"/>
+                      <GradientStop Color="#7D7D7D" Offset="1"/>
+                    </GradientStops>
+                  </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+              </Canvas.Resources>
+
+              <Path  Fill="{TemplateBinding BorderBrush}"
+                     Stroke="{StaticResource paint0_linear}"
+                     Data="M35.5 4L35.5 21C35.5 29.5605 28.5604 36.5 20 36.5H4.00001C3.17158 36.5 2.50001 35.8285 2.50001 35L2.5 31.8285C2.5 31.4314 2.65945 31.0477 2.94127 30.7659L30.7658 2.94142L30.4153 2.59092L30.7658 2.94142C31.0477 2.65956 31.4315 2.5 31.8285 2.5H34C34.8284 2.5 35.5 3.17157 35.5 4Z"/>
+              <Line  StartPoint="30.6274, 9.41421" EndPoint="9.41424, 30.6274" StrokeThickness="2" Stroke="#FF232323"/>
+              <Line  StartPoint="31.9706, 15.4142" EndPoint="16.4142, 30.9706" StrokeThickness="2" Stroke="#FF232323"/>
+              <Line  StartPoint="32.9141, 22.4142" EndPoint="23.0146, 32.3137" StrokeThickness="2" Stroke="#FF232323"/>
+
+            </Canvas>
+          </Grid>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+
+
+
+</Styles>

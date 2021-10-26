@@ -2,13 +2,21 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
        xmlns:sys="clr-namespace:System;assembly=netstandard">
 
+    <!-- Base -->
+    <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Sizes.xaml" />
+    <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Colors.xaml" />
+    <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Brushes.xaml" />
+    <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Fonts.xaml" />
+
     <!-- Icons -->
     <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/IconsGeometry.xaml" />
 
     <!-- Controls -->
+    <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Controls/Button.xaml" />
     <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Controls/PathTextBox.xaml" />    
     <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Controls/NetworkInterfacesComboBox.xaml" />    
     <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Controls/DigitalClock.xaml" />
     <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Controls/ChatBubble.xaml" />
+    <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Controls/TabControl.xaml" />
 
 </Styles>

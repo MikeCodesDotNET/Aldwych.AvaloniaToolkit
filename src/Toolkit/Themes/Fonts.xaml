@@ -1,0 +1,100 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+	    xmlns:media="clr-namespace:Avalonia.Media;assembly=Avalonia.Visuals">
+
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <!-- Add Controls for Previewer Here -->
+      <StackPanel Spacing="10">
+
+        <Label Content="Hello World - Header" Classes="Header"/>
+        <Label Content="Hello World - SubHeader" Classes="SubHeader"/>
+        <Label Content="Hello World - Title" Classes="Title"/>
+        <Label Content="Hello World - Caption" Classes="Caption"/>
+        <Label Content="Hello World - CaptionAlt" Classes="CaptionAlt"/>
+        <Label Content="Hello World - Body" Classes="Body"/>
+        <Label Content="Hello World - SubtitleAlt" Classes="SubTitleAlt"/>
+        <Label Content="Hello World - SubTitle" Classes="SubTitle"/>
+
+        <!-- Base -->
+        <Label Content="Hello World (default)" />
+        <Label Content="Hello World - Alt" Classes="Alt"/>
+      </StackPanel>
+    </Border>
+  </Design.PreviewWith>
+  
+
+	<Style>
+		<Style.Resources>
+
+      <!--
+			<FontFamily x:Key="FontFamily">resm:LightConsole.UI.Assets.Fonts.*.ttf?assembly=Aldwych.UI#Open Sans</FontFamily>
+			-->
+
+      
+      <!-- Font Sizes -->
+      <sys:Double x:Key="HeaderFontSize">56</sys:Double>
+      <sys:Double x:Key="SubHeaderFontSize">40</sys:Double>
+      <sys:Double x:Key="TitleHeaderFontSize">28</sys:Double>
+      <sys:Double x:Key="CaptionFontSize">14</sys:Double>
+      <sys:Double x:Key="CaptionAltFontSize">16</sys:Double>
+      <sys:Double x:Key="BodyFontSize">20</sys:Double>
+      <sys:Double x:Key="SubTitleAltFontSize">22</sys:Double>
+      <sys:Double x:Key="SubTitleFontSize">24</sys:Double>
+      <sys:Double x:Key="BaseFontSize">20</sys:Double>
+
+    </Style.Resources>
+	</Style>
+
+  <Style Selector=":is(ContentControl).Header">
+    <Setter Property="FontSize" Value="{StaticResource HeaderFontSize}"/>
+    <Setter Property="FontWeight" Value="Light"/>
+  </Style>
+
+  <Style Selector=":is(ContentControl).SubHeader">
+    <Setter Property="FontSize" Value="{StaticResource SubHeaderFontSize}"/>
+    <Setter Property="FontWeight" Value="Light"/>
+  </Style>
+
+  <Style Selector=":is(ContentControl).Title">
+    <Setter Property="FontSize" Value="{StaticResource TitleHeaderFontSize}"/>
+    <Setter Property="FontWeight" Value="SemiLight"/>
+  </Style>
+
+  <Style Selector=":is(ContentControl).Caption">
+    <Setter Property="FontSize" Value="{StaticResource CaptionFontSize}"/>
+    <Setter Property="FontWeight" Value="Regular"/>
+  </Style>
+
+  <Style Selector=":is(ContentControl).CaptionAlt">
+    <Setter Property="FontSize" Value="{StaticResource CaptionAltFontSize}"/>
+    <Setter Property="FontWeight" Value="Regular"/>
+  </Style>
+
+  <Style Selector=":is(ContentControl).Body">
+    <Setter Property="FontSize" Value="{StaticResource BodyFontSize}"/>
+    <Setter Property="FontWeight" Value="Regular"/>
+  </Style>
+
+  <Style Selector=":is(ContentControl).SubTitleAlt">
+    <Setter Property="FontSize" Value="{StaticResource SubTitleAltFontSize}"/>
+    <Setter Property="FontWeight" Value="Regular"/>
+  </Style>
+
+  <Style Selector=":is(ContentControl).SubTitle">
+    <Setter Property="FontSize" Value="{StaticResource SubTitleFontSize}"/>
+    <Setter Property="FontWeight" Value="Regular"/>
+  </Style>
+
+  <Style Selector=":is(ContentControl)">
+    <Setter Property="FontSize" Value="{StaticResource BaseFontSize}"/>
+    <Setter Property="FontWeight" Value="Regular"/>
+  </Style>
+
+  <Style Selector=":is(ContentControl).Alt">
+    <Setter Property="FontSize" Value="{StaticResource BaseFontSize}"/>
+    <Setter Property="FontWeight" Value="Bold"/>
+  </Style>
+  
+</Styles>

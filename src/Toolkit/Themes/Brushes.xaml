@@ -1,0 +1,117 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+	<Style>
+		<Style.Resources>
+
+      <!-- Generic - Foreground -->      
+      <SolidColorBrush x:Key="Foreground" Color="{StaticResource LiteMic.Foreground}"/>
+      <SolidColorBrush x:Key="DescriptionForeground" Color="{StaticResource LiteMic.DescriptionForeground}"/>
+      <SolidColorBrush x:Key="ErrorForeground" Color="{StaticResource LiteMic.ErrorForeground}"/>
+
+      <!-- Generic Background -->
+      <SolidColorBrush x:Key="ContentBackground" Color="{StaticResource LiteMic.Window.ContentBackground}"/>
+
+
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+      <!-- Workspace - Default -->
+      <SolidColorBrush x:Key="LiteMic.Brush.WindowContainer.Background" Color="{StaticResource LiteMic.Window.ContentBackground}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.WindowContainer.Border" Color="{StaticResource LiteMic.GrayScale.LightGrayCold}"/>
+
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+      <!-- Window - Defualt -->
+      <SolidColorBrush x:Key="LiteMic.Brush.Window.ActiveBorder" Color="{StaticResource LiteMic.Window.ActiveBorder}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Window.InactiveBorder" Color="{StaticResource LiteMic.Window.InactiveBorder}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Window.Foreground" Color="{StaticResource LiteMic.Window.Foreground}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Window.SelectedTitleBar" Color="{StaticResource LiteMic.Window.SelectedTitleBar}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Window.DefaultTitleBar" Color="{StaticResource LiteMic.Window.DefaultTitleBar}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Window.TitleBarText" Color="{StaticResource LiteMic.Window.TitleBarText}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Window.ContentBackground" Color="{StaticResource LiteMic.Window.ContentBackground}"/>
+
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+      
+      <!-- Button - Default -->
+      <SolidColorBrush x:Key="LiteMic.Brush.Button.Background" Color="{StaticResource LiteMic.Button.Background}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Button.Foreground" Color="{StaticResource LiteMic.Button.Foreground}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Button.Border" Color="{StaticResource LiteMic.Button.Border}"/>
+
+      <!-- Button - Hover -->
+      <SolidColorBrush x:Key="LiteMic.Brush.Button.HoverBackground" Color="{StaticResource LiteMic.Button.HoverBackground}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Button.HoverBorder" Color="{StaticResource LiteMic.Button.HoverBorder}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Button.HoverForeground" Color="{StaticResource LiteMic.Button.HoverForeground}"/>
+
+      <!-- Button - Pressed -->
+      <SolidColorBrush x:Key="LiteMic.Brush.Button.PressedBackground" Color="{StaticResource LiteMic.Button.PressedBackground}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Button.PressedBorder" Color="{StaticResource LiteMic.Button.PressedBorder}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Button.PressedForeground" Color="{StaticResource LiteMic.Button.PressedForeground}"/>
+
+      <!-- Button - Disabled -->
+      <SolidColorBrush x:Key="LiteMic.Brush.Button.DisabledBackground" Color="{StaticResource LiteMic.Button.DisabledBackground}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Button.DisabledBorder" Color="{StaticResource LiteMic.Button.DisabledBorder}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Button.DisabledForeground" Color="{StaticResource LiteMic.Button.DisabledForeground}"/>
+
+
+     
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            
+      <!-- Check Box - Default -->
+      <SolidColorBrush x:Key="LiteMic.Brush.Checkbox.Background" Color="{StaticResource LiteMic.Checkbox.Background}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Checkbox.Foreground" Color="{StaticResource LiteMic.Checkbox.Foreground}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Checkbox.Border" Color="{StaticResource LiteMic.Checkbox.Border}"/>
+
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+      
+      <!-- Input - Default -->
+      <SolidColorBrush x:Key="LiteMic.Brush.Input.Background" Color="{StaticResource LiteMic.Input.Background}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Input.Foreground" Color="{StaticResource LiteMic.Input.Foreground}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Input.Border" Color="{StaticResource LiteMic.Input.Border}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Input.PlaceholderForeground" Color="{StaticResource LiteMic.Input.PlaceholderForeground}"/>
+
+      <!-- Input - Active -->
+      <SolidColorBrush x:Key="LiteMic.Brush.Input.ActiveBackground" Color="{StaticResource LiteMic.Input.ActiveBackground}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Input.ActiveBorder" Color="{StaticResource LiteMic.Input.ActiveBorder}"/>
+
+      <!-- Input - Error -->
+      <SolidColorBrush x:Key="LiteMic.Brush.Input.ErrorBackground" Color="{StaticResource LiteMic.Input.ErrorBackground}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Input.ErrorForeground" Color="{StaticResource LiteMic.Input.ErrorForeground}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Input.ErrorBorder" Color="{StaticResource LiteMic.Input.ErrorBorder}"/>
+
+      <!-- Input - Info -->
+      <SolidColorBrush x:Key="LiteMic.Brush.Input.InfoBackground" Color="{StaticResource LiteMic.Input.InfoBackground}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Input.InfoForeground" Color="{StaticResource LiteMic.Input.InfoForeground}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Input.InfoBorder" Color="{StaticResource LiteMic.Input.InfoBorder}"/>
+
+      <!-- Input - Warning -->
+      <SolidColorBrush x:Key="LiteMic.Brush.Input.WarningBackground" Color="{StaticResource LiteMic.Input.WarningBackground}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Input.WarningForeground" Color="{StaticResource LiteMic.Input.WarningForeground}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.Input.WarningBorder" Color="{StaticResource LiteMic.Input.WarningBorder}"/>
+
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+      <!-- Patch Cell - Default -->      
+      <SolidColorBrush x:Key="LiteMic.Brush.PatchCell.Foreground" Color="{StaticResource LiteMic.Foreground}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.PatchCell.Background" Color="{StaticResource LiteMic.Window.ContentBackground}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.PatchCell.Border" Color="{StaticResource LiteMic.Window.ContentBackground}"/>
+
+      <!-- Patch Cell - Selected -->
+      <SolidColorBrush x:Key="LiteMic.Brush.PatchCell.SelectedBackground" Color="{StaticResource LiteMic.Button.Background}"/>
+      <SolidColorBrush x:Key="LiteMic.Brush.PatchCell.SelectedBorder" Color="{StaticResource LiteMic.Window.SelectedTitleBar}"/>
+
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+      <!-- Tabs - Default -->
+      <SolidColorBrush x:Key="TabStripBackground" Color="#353535"/>      
+      <SolidColorBrush x:Key="TabContentBackground" Color="{StaticResource LiteMic.Window.ContentBackground}"/>
+
+      <SolidColorBrush x:Key="TabItemBackground" Color="#272727"/>
+      <SolidColorBrush x:Key="TabItemSelectedBackground" Color="{StaticResource LiteMic.Window.ContentBackground}"/>
+      <SolidColorBrush x:Key="TabItemHoverBackground" Color="#262626"/>
+
+
+    </Style.Resources>
+	</Style>
+
+</Styles>

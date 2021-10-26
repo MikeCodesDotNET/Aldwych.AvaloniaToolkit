@@ -1,0 +1,154 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+						 MinWidth="200"
+						 MinHeight="50"
+						 Background="Transparent"
+             x:Class="Aldwych.Mdi.Controls.ViewContainer">
+
+	<Border 
+		x:Name="PART_Border"		
+		BorderThickness="4" 
+		BorderBrush="{StaticResource ThemeControlHighlightLowBrush}" 
+		CornerRadius="5"
+    BoxShadow="0 0 20 3 Black">
+
+		<Grid RowDefinitions="25, *">			
+
+			<Panel Grid.Row="1" 
+             Background="Transparent" 
+             Margin="0, -1,0,0"
+             ClipToBounds="True">
+						
+				<Border x:Name="PART_ContentBorder"
+								ZIndex="0"
+								CornerRadius="0, 0, 7, 7"
+								Background="{StaticResource ThemeBackgroundBrush}"					
+								ClipToBounds="True"
+								Margin="0,1,0,0"
+								VerticalAlignment="Stretch"
+								HorizontalAlignment="Stretch">		
+          
+								<Panel x:Name="PART_Content" 
+												MinWidth="150" MinHeight="50"/>				
+				</Border>
+
+				
+				
+				
+				
+				<!-- Resizing Dragger -->
+				<Canvas 
+					x:Name="PART_ResizeDragger"
+					Width="55" 
+					Height="55" 
+					VerticalAlignment="Bottom" 
+					HorizontalAlignment="Right" 
+					Margin="0,0,-25,-25">
+
+
+					<Canvas.Resources>
+						<LinearGradientBrush x:Key="paint0_linear"  StartPoint="18,15" EndPoint="33,31">
+							<LinearGradientBrush.GradientStops>
+								<GradientStops>
+									<GradientStop Color="#2F2F2F"/>
+									<GradientStop Color="#736D6D6D" Offset="0.220192"/>
+									<GradientStop Color="#7D7D7D" Offset="0.328125"/>
+									<GradientStop Color="#7D7D7D" Offset="1"/>
+								</GradientStops>
+							</LinearGradientBrush.GradientStops>
+						</LinearGradientBrush>
+					</Canvas.Resources>
+
+					<Path  Fill="#FF7D7D7D" 
+                 Stroke="{StaticResource paint0_linear}" 
+                 Data="M35.5 4L35.5 21C35.5 29.5605 28.5604 36.5 20 36.5H4.00001C3.17158 36.5 2.50001 35.8285 2.50001 35L2.5 31.8285C2.5 31.4314 2.65945 31.0477 2.94127 30.7659L30.7658 2.94142L30.4153 2.59092L30.7658 2.94142C31.0477 2.65956 31.4315 2.5 31.8285 2.5H34C34.8284 2.5 35.5 3.17157 35.5 4Z"/>
+					<Line  StartPoint="30.6274, 9.41421" EndPoint="9.41424, 30.6274" StrokeThickness="2" Stroke="#FF232323"/>
+					<Line  StartPoint="31.9706, 15.4142" EndPoint="16.4142, 30.9706" StrokeThickness="2" Stroke="#FF232323"/>
+					<Line  StartPoint="32.9141, 22.4142" EndPoint="23.0146, 32.3137" StrokeThickness="2" Stroke="#FF232323"/>
+			  
+					
+					
+				</Canvas>
+
+
+			</Panel>
+
+			<!-- Toolbar -->
+			<Border x:Name="PART_TooblarBackground"
+					Background="{StaticResource ThemeControlHighlightLowBrush}"
+					CornerRadius="2, 2 0, 0"
+					Height="30">
+
+				<Grid ColumnDefinitions="Auto,*, *, 30" >
+
+					<Button x:Name="PART_OptionsButton"
+							Classes="NoFocus"
+							Grid.Column="0"
+							Width="72" Height="15"
+							Margin="1,-1,0,0"
+							Background="Transparent"
+							BorderBrush="Transparent">
+						<Button.Content>
+							<Canvas HorizontalAlignment="Center"
+											VerticalAlignment="Center"
+											Width="72" Height="35"
+											Background="Transparent">
+												<Path Fill="#000000" Data="M35 0H0V35H35V0ZM10.2495 4.01465V29H25.6816V24.625H15.5474V4.01465H10.2495Z"/>
+												<Path Fill="#000000" Data="M72 0H37V35H72V0ZM60.6226 29H66.6724L58.23 16.4048L66.0742 4.01465H60.3662L55.0854 13.0039L49.7021 4.01465H43.8574L51.6162 16.1143L43.3276 29H49.0015L54.812 19.5493L60.6226 29Z"/>
+							</Canvas>
+						</Button.Content>
+					</Button>
+
+					<TextBlock x:Name="PART_Title"
+										 Grid.Column="1"
+										 Margin="10,0"
+										 VerticalAlignment="Center"
+										 FontSize="14"
+										 FontWeight="SemiBold"
+										 Foreground="White"/>
+
+					<StackPanel x:Name="PART_ToolbarControlsPanel"
+											Orientation="Horizontal" 
+                      Grid.Column="2" 
+                      HorizontalAlignment="Right"                        
+                      Margin="0, -1, 0 2">
+					
+					</StackPanel>
+
+
+					<Button x:Name="PART_CloseButton"
+							Classes="NoFocus"
+							Grid.Column="3"
+							Width="25" Height="25"
+							Background="Transparent"
+							BorderBrush="Transparent">
+						<Button.Content>
+							<Canvas HorizontalAlignment="Center"
+									VerticalAlignment="Center"
+									Width="10" Height="10"
+									Background="Transparent"									
+									Margin="0,0, 10,13"
+									x:Name="Icon">
+								<Path x:Name="Path" 
+                      Fill="{StaticResource ThemeForegroundBrush}" 
+                      Data="M15.9356 10.9993L21.4891 5.44469C22.168 4.76563 22.168 3.65539 21.4891 2.97633L19.0178 0.507984C18.3389 -0.169328 17.2289 -0.169328 16.55 0.507984L10.9965 6.06265L5.44306 0.507984C4.7659 -0.169328 3.65416 -0.169328 2.97525 0.507984L0.509183 2.97633C-0.169727 3.65539 -0.169727 4.76563 0.509183 5.44469L6.06263 10.9993L0.509183 16.5558C-0.169727 17.2348 -0.169727 18.345 0.509183 19.0241L2.97699 21.4907C3.6559 22.1698 4.76764 22.1698 5.44481 21.4907L10.9983 15.9378L16.5517 21.4907C17.2306 22.1698 18.3406 22.1698 19.023 21.4907L21.4908 19.0241C22.1697 18.345 22.1697 17.2348 21.4908 16.5558L15.9356 10.9993Z" />
+							</Canvas>
+						</Button.Content>
+					</Button>
+
+
+				</Grid>
+			</Border>
+
+
+
+		</Grid>
+		
+		
+	</Border>
+	
+    
+</UserControl>

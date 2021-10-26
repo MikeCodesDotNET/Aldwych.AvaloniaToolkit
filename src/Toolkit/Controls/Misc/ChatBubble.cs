@@ -1,7 +1,6 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
 
-
 namespace Aldwych.AvaloniaToolkit.Controls
 {
     public class ChatBubble : ContentControl, ISelectable
