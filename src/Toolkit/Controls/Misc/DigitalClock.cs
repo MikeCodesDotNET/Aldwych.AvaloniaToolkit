@@ -50,10 +50,10 @@ namespace Aldwych.AvaloniaToolkit.Controls
 
         private void _timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
-            Dispatcher.UIThread.InvokeAsync(() =>
-            {
-                CurrentTime = DateTime.Now.ToString("hh:mm:ss");
-            });
+            //Dispatcher.UIThread.InvokeAsync(() =>
+            //{
+            //    CurrentTime = DateTime.Now.ToString("hh:mm:ss");
+            //});
         }
     }
 }

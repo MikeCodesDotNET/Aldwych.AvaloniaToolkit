@@ -10,23 +10,23 @@ using System.Threading.Tasks;
 
 namespace SampleApp.ViewModels
 {
-    public class AddWindowViewModel : ViewModelBase
+    public class AddWindowViewModel : ClosableViewModelBase
     {
         public Workspace TouchGridLayout { get; set; }
 
-        public AddWindowViewModel()
+        public AddWindowViewModel() : base(null)
         {
         }
 
 
         public void AddCommandLineHistoryWindow()
         {
-            TouchGridLayout?.PresentDocumentView(typeof(CommandLineHistoryView));
+            TouchGridLayout?.Show(new CommandLineHistoryViewModel());
         }
 
         public void AddClockWindow()
         {
-            TouchGridLayout?.PresentDocumentView(typeof(ClockView));
+            TouchGridLayout?.Show(new ClockViewModel(), WindowType.Alert);
         }
 
     }

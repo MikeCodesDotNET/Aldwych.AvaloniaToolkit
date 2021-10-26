@@ -1,4 +1,5 @@
-﻿using Avalonia;
+﻿using Aldwych.AvaloniaToolkit.Abstract;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Layout;
@@ -8,7 +9,7 @@ using System.ComponentModel;
 
 namespace Aldwych.Mdi.Controls
 {
-    public interface IWindow
+    public interface IWindow : IHasShow, IHasClose, IHasTitle
     {
         SizeToContent SizeToContent { get; set; }
 
@@ -20,8 +21,6 @@ namespace Aldwych.Mdi.Controls
 
         VerticalAlignment VerticalContentAlignment { get; set; }
 
-        string Title { get; set; }
-
         bool IsActive { get; }
 
         bool Topmost { get; set; }
@@ -29,8 +28,6 @@ namespace Aldwych.Mdi.Controls
         void Hide();
 
         void Activate();
-
-        void Show();
 
         object? Owner { get; }
 
@@ -59,7 +56,6 @@ namespace Aldwych.Mdi.Controls
         Size ClientSize { get; }
 
 
-        void Close();
 
         void Close(object dialogResult);
 

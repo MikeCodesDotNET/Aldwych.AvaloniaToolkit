@@ -8,6 +8,8 @@ using System;
 using System.Linq;
 
 using Aldwych.Mdi.Helpers;
+using Aldwych.AvaloniaToolkit.ViewModels;
+using System.ComponentModel;
 
 namespace Aldwych.Mdi.Controls
 {
@@ -30,6 +32,12 @@ namespace Aldwych.Mdi.Controls
 
     }
 
+    public enum WindowType
+    {
+        UserView = 10,
+        SystemView = 50,
+        Alert = 100,
+    }
 
     public class Workspace : Canvas
     {
@@ -43,7 +51,6 @@ namespace Aldwych.Mdi.Controls
         public static readonly StyledProperty<IBrush> DefaultDotBrushProperty = AvaloniaProperty.Register<Workspace, IBrush>(nameof(DefaultDotBrush), (IBrush)Brushes.White);
 
         public static readonly StyledProperty<Type> AddNewWindowControlTypeProperty = AvaloniaProperty.Register<Workspace, Type>(nameof(AddNewWindowControlType));
-
 
         public static readonly StyledProperty<IWindow> ActiveWindowProperty = AvaloniaProperty.Register<Workspace, IWindow>(nameof(ActiveWindow));
 
@@ -59,6 +66,13 @@ namespace Aldwych.Mdi.Controls
         private RectangleGeometry selectionBox;
 
         private PointerEventTarget touchType;
+
+        private ViewModelResolver viewModelResolver = new ViewModelResolver();
+
+
+        /* -----------------------------------------------------------------------------------------------------------------------
+         * PROTECTED MEMBERS
+         * ---------------------------------------------------------------------------------------------------------------------*/
 
         protected double CalculatedColumnWidth { get; set; }
         protected double CalculatedRowHeight { get; set; }
@@ -112,7 +126,7 @@ namespace Aldwych.Mdi.Controls
 
             ViewsDidChange += (s, e) =>
             {
-                var dialogs = Children.OfType<DialogViewContainer>();
+                var dialogs = Children.OfType<MdiWindow>().Where(x => x.WindowType != WindowType.UserView);
                 if (dialogs.Any())
                 {
                     //we're displaying dialogs! 
@@ -149,6 +163,8 @@ namespace Aldwych.Mdi.Controls
                 }
             }
         }
+        
+        
         /* -----------------------------------------------------------------------------------------------------------------------
         * PROPERTIES
         * ---------------------------------------------------------------------------------------------------------------------*/
@@ -331,53 +347,91 @@ namespace Aldwych.Mdi.Controls
         /* -----------------------------------------------------------------------------------------------------------------------
          * VIEW MANAGEMENT   
          * ---------------------------------------------------------------------------------------------------------------------*/
+        public void Show(ClosableViewModelBase viewModel, WindowType windowType = WindowType.UserView, ClosableViewModelBase owner = null, StartupLocation startupLocation = StartupLocation.CenterParent)
+        {     
+            if(windowType == WindowType.UserView)
+                addWindowProviderViewContainer.Close();
 
-        public void PresentDocumentView(Type type)
-        {
-            addWindowProviderViewContainer.Close();
+            var mdiWindow = CreateWindow(viewModel, windowType, owner);
+            mdiWindow.StartupLocation = startupLocation;
 
-            var view = new MdiWindow();
-            view.Title = LayoutHelpers.SanitizeTypeName(type.Name);
-            view.Content = (IControl)Activator.CreateInstance(type);
-
-
-            view.Closed += (s, e) =>
-            {
-                Children.Remove((IControl)s);
-                InvalidateVisual();
-            };
-
-            view.PositionChanging += (s, e) =>
-            {
-                view.Opacity = 0.8;
-
-
-                var windows = Children.OfType<IWindow>().Where(x => x != view);
-                var collisionDetected = windows.Any(x => x.Bounds.Intersects(view.Bounds));
-
-                if (collisionDetected)
-                    view.InvalidPosition = true;
-                else
-                    view.InvalidPosition = false;
-            };
-
-            view.PositionChanged += (s, e) =>
-            {
-                if (view.InvalidPosition && view.PreviousValidPosition.HasValue)
-                {
-                    view.Position = view.PreviousValidPosition.Value;
-                    view.InvalidPosition = false;
-                }
-                view.Opacity = 1.0;
-            };
-
- 
-            Children.Add(view);
-            view.Position = NearestPoint(draggingStartPoint.Value);
+            Children.Add(mdiWindow);
+            mdiWindow.Position = NearestPoint(draggingStartPoint.Value);
             ViewsDidChange?.Invoke(this, new EventArgs());
-            view.ZIndex = 11;
+
+            mdiWindow.ZIndex = (int)windowType;
         }
 
+
+        private MdiWindow CreateWindow(ClosableViewModelBase viewModel, WindowType windowType, ClosableViewModelBase owner = null)
+        {
+            if (viewModel == null) throw new ArgumentNullException(nameof(viewModel));
+            var mdiWindow = new MdiWindow()
+            {
+                Title = viewModel.Title,
+                Owner = owner,
+                Content = viewModel,
+                WindowType = windowType
+            };
+
+            mdiWindow.Closing += (s, e) => HandleClosing(s, e, viewModel);
+            mdiWindow.Closed += HandleClosed;
+
+            mdiWindow.PositionChanging += HandlePositionChanging;
+            mdiWindow.PositionChanged += HandlePositionChanged;
+
+            viewModel.SetOwner(mdiWindow);
+            return mdiWindow;
+        }
+
+
+
+        //MDI Window Event Handlers
+        void HandlePositionChanged(object sender, Point e)
+        {
+            if (sender is MdiWindow mdiWindow)
+            {
+                if (mdiWindow.InvalidPosition && mdiWindow.PreviousValidPosition.HasValue)
+                {
+                    mdiWindow.Position = mdiWindow.PreviousValidPosition.Value;
+                    mdiWindow.InvalidPosition = false;
+                }
+                mdiWindow.Opacity = 1.0;
+            }
+        }
+
+        void HandlePositionChanging(object sender, Point e)
+        {
+            if (sender is MdiWindow mdiWindow)
+            {
+                mdiWindow.Opacity = 0.8;
+
+                var windows = Children.OfType<IWindow>().Where(x => x != mdiWindow);
+                var collisionDetected = windows.Any(x => x.Bounds.Intersects(mdiWindow.Bounds));
+
+                if (collisionDetected)
+                    mdiWindow.InvalidPosition = true;
+                else
+                    mdiWindow.InvalidPosition = false;
+            }          
+        }
+
+        void HandleClosing(object sender, CancelEventArgs e, ClosableViewModelBase vm)
+        {
+            if (vm != null)
+                vm.Close(e);
+        }
+
+        void HandleClosed(object sender, EventArgs e)
+        {
+            if (sender is MdiWindow mdiWindow)
+            {
+                Children.Remove((IControl)sender);
+                mdiWindow.PositionChanged -= HandlePositionChanged;
+                mdiWindow.PositionChanging -= HandlePositionChanging;
+                InvalidateVisual();
+            }           
+        }
 
 
         /* -----------------------------------------------------------------------------------------------------------------------
@@ -407,6 +461,8 @@ namespace Aldwych.Mdi.Controls
                 Children.Add(addWindowProviderViewContainer);
                 ViewsDidChange?.Invoke(this, new EventArgs());
             }
+
+
         }
 
         public Action ShowAddNewViewDialogAction { get; set; }

@@ -1,4 +1,5 @@
 ﻿using Aldwych.AvaloniaToolkit.Extensions;
+using Aldwych.AvaloniaToolkit.ViewModels;
 using Aldwych.Mdi.Helpers;
 using Avalonia;
 using Avalonia.Controls;
@@ -51,8 +52,35 @@ namespace Aldwych.Mdi.Controls
         public static readonly StyledProperty<Size> SizeProperty = 
             AvaloniaProperty.Register<MdiWindow, Size>(nameof(Size));
 
+        public static new readonly StyledProperty<ClosableViewModelBase> ContentProperty =
+           AvaloniaProperty.Register<MdiWindow, ClosableViewModelBase>(nameof(Content));
+
+        public static readonly StyledProperty<WindowType> WindowTypeProperty =
+         AvaloniaProperty.Register<MdiWindow, WindowType>(nameof(WindowType), WindowType.UserView);
+
+        public WindowType WindowType
+        {
+            get { return GetValue(WindowTypeProperty); }
+            set
+            {
+                SetValue(WindowTypeProperty, value);
+                base.Content = value;
+            }
+        }
+
+        public new ClosableViewModelBase Content
+        {
+            get { return GetValue(ContentProperty); }
+            set 
+            { 
+                SetValue(ContentProperty, value);
+                base.Content = value;
+            }
+        }
 
         public static readonly StyledProperty<bool> IsActiveProperty = AvaloniaProperty.Register<MdiWindow, bool>(nameof(IsActive));
+
+   
 
         public bool IsActive
         {
@@ -289,6 +317,7 @@ namespace Aldwych.Mdi.Controls
 
         protected virtual void CloseButton_Click(object sender, RoutedEventArgs e)
         {
+            
             Close();
         }
 
@@ -456,7 +485,11 @@ namespace Aldwych.Mdi.Controls
 
         public void Close()
         {
-            Closed?.Invoke(this, EventArgs.Empty);
+            var ce = new CancelEventArgs(false);
+            Closing?.Invoke(this, ce);
+
+            if(!ce.Cancel)
+                Closed?.Invoke(this, EventArgs.Empty);
         }
 
         public void Close(object dialogResult)
@@ -534,13 +567,11 @@ namespace Aldwych.Mdi.Controls
         }
 
 
-       
-
         public SizeToContent SizeToContent { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public bool Topmost { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public object Owner => throw new NotImplementedException();
+        public object Owner { get; internal set; }
 
         public bool CanResize { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public WindowStartupLocation WindowStartupLocation { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
