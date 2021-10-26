@@ -47,7 +47,7 @@ namespace Aldwych.Mdi.Controls
         public static readonly StyledProperty<int> RowCountProperty = AvaloniaProperty.Register<Workspace, int>(nameof(RowCount), 10);
         public static readonly StyledProperty<int> ColumnCountProperty = AvaloniaProperty.Register<Workspace, int>(nameof(ColumnCount), 21);
 
-        public static readonly StyledProperty<IBrush> HighlightDotBrushProperty = AvaloniaProperty.Register<Workspace, IBrush>(nameof(HighlightDotBrush), (IBrush)Brushes.Yellow);
+        public static readonly StyledProperty<IBrush> HighlightDotBrushProperty = AvaloniaProperty.Register<Workspace, IBrush>(nameof(HighlightDotBrush), (IBrush)Brushes.Cyan);
         public static readonly StyledProperty<IBrush> DefaultDotBrushProperty = AvaloniaProperty.Register<Workspace, IBrush>(nameof(DefaultDotBrush), (IBrush)Brushes.White);
 
         public static readonly StyledProperty<Type> AddNewWindowControlTypeProperty = AvaloniaProperty.Register<Workspace, Type>(nameof(AddNewWindowControlType));

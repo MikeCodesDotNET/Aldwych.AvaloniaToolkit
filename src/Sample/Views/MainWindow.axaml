@@ -18,11 +18,17 @@
 
   <TabControl>
 
-    <TabItem Header="MDI">
+    <TabItem Header="Workspace 1">
       <amdi:Workspace x:Name="touchGrid"
                         Background="{StaticResource ContentBackground}"
                         AddNewWindowControlType="{x:Type v:AddWindowView}"/>
     </TabItem>
+	  
+	<TabItem Header="Workspace 2">
+		<amdi:Workspace x:Name="touchGrid2"
+						Background="{StaticResource ContentBackground}"
+						AddNewWindowControlType="{x:Type v:AddWindowView}"/>
+	</TabItem>
     
     <TabItem Header="Pickers">
       <StackPanel Margin="20" Spacing="20">
