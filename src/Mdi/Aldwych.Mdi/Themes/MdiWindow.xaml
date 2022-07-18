@@ -14,7 +14,6 @@
     <Setter Property="MinWidth" Value="100"/>
     <Setter Property="MinHeight" Value="100"/>
     <Setter Property="BorderBrush" Value="#4D4DC2"/>
-    <Setter Property="ActiveBorderBrush" Value="#2E2E75"/>
     <Setter Property="Template">
       <ControlTemplate>
         <Border x:Name="PART_ContentBorder"

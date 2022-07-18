@@ -18,5 +18,8 @@
     <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Controls/DigitalClock.xaml" />
     <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Controls/ChatBubble.xaml" />
     <StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Controls/TabControl.xaml" />
+	<StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Controls/NotificationCard.xaml" />
+	<StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Controls/WindowNotificationManager.xaml" />
+	<StyleInclude Source="avares://Aldwych.AvaloniaToolkit/Themes/Controls/Frame.xaml" />
 
 </Styles>

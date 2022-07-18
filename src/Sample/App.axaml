@@ -1,9 +1,10 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="using:SampleApp"
+             xmlns:atvm="using:Aldwych.AvaloniaToolkit.ViewModels"
              x:Class="SampleApp.App">
     <Application.DataTemplates>
-        <local:ViewLocator/>
+		<atvm:ViewModelResolver/>
     </Application.DataTemplates>
 
     <Application.Styles>

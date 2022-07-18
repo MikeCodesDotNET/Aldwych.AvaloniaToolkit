@@ -17,6 +17,7 @@
       See the change log for release notes:
       https://github.com/MikeCodesDotNET/Aldwych.AvaloniaToolkit/blob/master/CHANGELOG.md
     </PackageReleaseNotes>
+	<AvaloniaVersion>0.10.999-cibuild0016992-beta</AvaloniaVersion>
   </PropertyGroup>
 
  
@@ -26,11 +27,13 @@
 
  
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.8" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.8" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.8" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.8" />    
+    <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />    
   </ItemGroup>
+
+ 
   
 
 

@@ -1,0 +1,227 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:vm="using:SampleApp.ViewModels"
+			 xmlns:v="using:SampleApp.Views"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:atc="using:Aldwych.AvaloniaToolkit.Controls"
+			 xmlns:navigation="using:Aldwych.AvaloniaToolkit.Navigation"
+			 xmlns:assists="using:Aldwych.AvaloniaToolkit.Assists"
+			 xmlns:amdi="clr-namespace:Aldwych.Mdi.Controls;assembly=Aldwych.Mdi"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SampleApp.Views.MainView">
+
+
+	<Design.DataContext>
+		<vm:MainWindowViewModel/>
+	</Design.DataContext>
+	
+	<TabControl>
+		<TabItem Header="Shadow Assists">
+			<StackPanel Spacing="10" Margin="50,10">
+				<Border Background="DarkGray"
+						MinWidth="50" MinHeight="50"
+						CornerRadius="20"
+						assists:ShadowAssist.ShadowDepth="Depth0">
+					<TextBlock Text="Depth0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+				</Border>
+				<Border Background="DarkGray"
+						MinWidth="50" MinHeight="50"
+						CornerRadius="20"
+						assists:ShadowAssist.ShadowDepth="Depth1">
+					<TextBlock Text="Depth1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+				</Border>
+				<Border Background="DarkGray"
+						MinWidth="50" MinHeight="50"
+						CornerRadius="20"
+						assists:ShadowAssist.ShadowDepth="Depth2">
+					<TextBlock Text="Depth2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+				</Border>
+				<Border Background="DarkGray"
+						MinWidth="50" MinHeight="50"
+						CornerRadius="20"
+						assists:ShadowAssist.ShadowDepth="Depth3">
+					<TextBlock Text="Depth3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+				</Border>
+				<Border Background="DarkGray"
+						MinWidth="50" MinHeight="50"
+						CornerRadius="20"
+						assists:ShadowAssist.ShadowDepth="Depth4">
+					<TextBlock Text="Depth4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+				</Border>
+				<Border Background="DarkGray"
+						 MinWidth="50" MinHeight="50"
+						 CornerRadius="20"
+						 assists:ShadowAssist.ShadowDepth="Depth5">
+					<TextBlock Text="Depth5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+				</Border>
+
+				<Border Background="LightGray"
+						 MinWidth="50" MinHeight="50"
+						 CornerRadius="20"
+						 assists:ShadowAssist.ShadowDepth="CenterDepth1">
+					<TextBlock Text="CenterDepth1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+				</Border>
+				<Border Background="LightGray"
+						MinWidth="50" MinHeight="50"
+						CornerRadius="20"
+						assists:ShadowAssist.ShadowDepth="CenterDepth2">
+					<TextBlock Text="CenterDepth2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+				</Border>
+				<Border Background="LightGray"
+						MinWidth="50" MinHeight="50"
+						CornerRadius="20"
+						assists:ShadowAssist.ShadowDepth="CenterDepth3">
+					<TextBlock Text="CenterDepth3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+				</Border>
+				<Border Background="LightGray"
+						MinWidth="50" MinHeight="50"
+						CornerRadius="20"
+						assists:ShadowAssist.ShadowDepth="CenterDepth4">
+					<TextBlock Text="CenterDepth4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+				</Border>
+				<Border Background="LightGray"
+						MinWidth="50" MinHeight="50"
+						CornerRadius="20"
+						assists:ShadowAssist.ShadowDepth="CenterDepth5">
+					<TextBlock Text="CenterDepth5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+				</Border>
+			</StackPanel>
+		</TabItem>
+
+		<TabItem Header="Regions" IsSelected="True">
+			<Grid RowDefinitions="Auto, *, Auto" ColumnDefinitions="Auto, Auto, *">
+
+				<!-- Toolbar -->
+				<ContentControl Grid.Row="0" Grid.ColumnSpan="3" Background="DarkGray" MinHeight="75">
+					<StackPanel Orientation="Horizontal" Spacing="20" Margin="20, 0">
+						<Button Content="Red" Command="{Binding SetContentRed}"/>
+						<Button Content="Green" Command="{Binding SetContentGreen}"/>
+						<Button Content="Blue" Command="{Binding SetContentBlue}"/>
+
+					</StackPanel>
+				</ContentControl>
+
+				<!-- Left Bar -->
+				<ContentControl Grid.Row="1" Grid.Column="0" Background="SlateGray" MinWidth="250">
+					<Grid RowDefinitions="*, Auto">
+						<ContentControl Grid.Row="1"
+										MinHeight="200"
+										Background="DarkGray"
+										navigation:Region.RegionName="MainContent"
+										Margin="8"/>
+					</Grid>
+				</ContentControl>
+
+				<GridSplitter Grid.Row="1" Grid.Column="1" Background="DarkSlateGray"/>
+
+				<!-- Content -->
+				<ContentControl Grid.Row="1" Grid.Column="2"
+						Background="Gray"
+						navigation:Region.RegionName="MainContent">
+
+				</ContentControl>
+
+				<!-- Status Bar -->
+				<ContentControl Grid.Row="2" Grid.ColumnSpan="3" Background="DarkGray" MinHeight="40">
+
+				</ContentControl>
+
+			</Grid>
+		</TabItem>
+
+		<TabItem Header="Workspace ">
+			<amdi:Workspace x:Name="touchGrid"
+							  Background="{StaticResource ContentBackground}"
+							  AddNewWindowControlType="{x:Type v:AddWindowView}"/>
+		</TabItem>
+
+
+		<!--
+		<TabItem Header="Pickers">
+			<StackPanel Margin="20" Spacing="20">
+
+				<atc:FilePathTextBox Watermark="File Path" Header="Example File Selector"/>
+
+				<atc:DirectoryPathTextBox  Watermark="Root Directory" Header="Example Director Selector"/>
+
+				<atc:NetworkInterfacesComboBox Header="Network Interface"/>
+
+				<atc:DigitalClock />
+
+				<atc:Rate Icon="{DynamicResource StarGeometry}"
+						  DefaultColor="Gray"
+						  SelectedColor="Gold"
+						  Value="2"
+						  Margin="10"
+						  HorizontalAlignment="Center"/>
+
+
+			</StackPanel>
+		</TabItem>
+-->
+		
+		<TabItem Header="Chat Bubbles">
+			<StackPanel Spacing="20">
+				<atc:ChatBubble Content="Hey!" IsRead="True"/>
+				<atc:ChatBubble  Role="Receiver" IsRead="True">
+					<Image Source="/Assets/avalonia-logo.ico" Width="100" Height="100" />
+				</atc:ChatBubble>
+				<atc:ChatBubble Content="Looks like a really cool technology!" IsRead="False"/>
+
+
+			</StackPanel>
+		</TabItem>
+
+		<TabItem Header="Circle Panel">
+
+			<atc:CirclePanel Diameter="250">
+				<Border Background="Red"
+						Width="75" Height="75">
+					<TextBlock Text="1"
+							   Foreground="White"
+							   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Border>
+
+				<Border Background="Green"
+						Width="75" Height="75">
+					<TextBlock Text="2"
+							   Foreground="White"
+							   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Border>
+
+				<Border Background="Blue"
+						Width="75" Height="75">
+					<TextBlock Text="3"
+							   Foreground="White"
+							   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Border>
+
+				<Border Background="Cyan"
+						Width="75" Height="75">
+					<TextBlock Text="4"
+							   Foreground="Black"
+							   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Border>
+
+				<Border Background="Magenta"
+						Width="75" Height="75">
+					<TextBlock Text="5"
+							   Foreground="White"
+							   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Border>
+
+				<Border Background="Yellow"
+						Width="75" Height="75">
+					<TextBlock Text="6"
+							   Foreground="Black"
+							   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+				</Border>
+
+			</atc:CirclePanel>
+
+		</TabItem>
+
+
+	</TabControl>
+</UserControl>
